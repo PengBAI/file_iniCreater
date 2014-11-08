@@ -1,7 +1,16 @@
 file_iniCreater
 ===============
 
-tp en cours IHM .Net
+tp en cours IHM .Net, editeur un fichier .ini 
+--------fichier .ini--------
+[section 0]
+name=value
+[section 1]
+[section 2]
+name1=value1
+name2=value2
+name3=value3
+----------------------------
 
 Visual Studio 2010
 
