@@ -31,12 +31,18 @@ namespace TP1
 				}else{
 					Console.Out.WriteLine("Fichier non trouvé: " + args[0]);
 				}
-				IniFile iniFile = new IniFile(args[0]);
 
+
+				IniFile iniFile = new IniFile(args[0]);
+				Console.Out.WriteLine(iniFile.GetString(args[0], "Mail", "MAPI"));
+				iniFile.Write(args[0], "abdc", "efgh", 500);
+				
+				
+				
 				// modifications du fichier
 				if(args.Length >= 4){
 					try{
-						IniFile.Write(args[0], args[1], args[2], args[3]);
+						//IniFile.Write(args[0], args[1], args[2], args[3]);
 					}
 					catch(ArgumentException Err)
 					{
