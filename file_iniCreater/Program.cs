@@ -4,45 +4,45 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace TP1
+namespace TPnet
 	{
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main(string[] Args)
 			{
-				Console.Out.WriteLine("Nombre de parametres: " + args.Length);
+				Console.Out.WriteLine("Nombre de parametres: " + Args.Length);
 				
 				//Ouverture d'un ficher et lecture d'une valeur
-				for(int cpt = 0; cpt < args.Length; cpt++){
-					Console.Out.WriteLine(args[cpt]);
+				for(int Cpt = 0; Cpt < Args.Length; Cpt++){
+					Console.Out.WriteLine(Args[Cpt]);
 				}
 
 				// lecture tous les contenues du fichier
-				if(args.Length > 0 && File.Exists(args[0])){
+				if(Args.Length > 0 && File.Exists(Args[0])){
 					// lectueur du fichier
-					using(StreamReader sr = File.OpenText(args[0])){
-						string line;
-						while((line = sr.ReadLine()) != null){
-							Console.Out.WriteLine(line);
+					using(StreamReader sr = File.OpenText(Args[0])){
+						string Line;
+						while((Line = sr.ReadLine()) != null){
+							Console.Out.WriteLine(Line);
 						}
 					}
 					//sr.Close(); // close fichier
 					//sr.Dispose(); // free resources
 				}else{
-					Console.Out.WriteLine("Fichier non trouvé: " + args[0]);
+					Console.Out.WriteLine("Fichier non trouvé: " + Args[0]);
 				}
 
 
-				IniFile iniFile = new IniFile(args[0]);
-				Console.Out.WriteLine(iniFile.GetString(args[0], "Mail", "MAPI"));
-				iniFile.Write(args[0], "abdc", "efgh", 500);
+				IniFile iniFile = new IniFile(Args[0]);
+				Console.Out.WriteLine(iniFile.GetString(Args[0], "Mail", "MAPI"));
+				iniFile.Write(Args[0], "abdc", "efgh", 500);
 				
 				
 				
 				// modifications du fichier
-				if(args.Length >= 4){
+				if(Args.Length >= 4){
 					try{
-						//IniFile.Write(args[0], args[1], args[2], args[3]);
+						//IniFile.Write(Args[0], Args[1], Args[2], Args[3]);
 					}
 					catch(ArgumentException Err)
 					{
